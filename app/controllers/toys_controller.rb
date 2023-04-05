@@ -12,9 +12,15 @@ class ToysController < ApplicationController
   end
 
   def update
-    toy = Toy.find_by(id: params[:id])
-    toy.update(toy_params)
+    toy = Toy.find(params[:id])
+    toy.likes += 1
+    if toy.save
+      render json: toy
+    else
+      render json: { errors: toy.errors.full_messages }, status: :unprocessable_entity
+    end
   end
+  
 
   def destroy
     toy = Toy.find_by(id: params[:id])
