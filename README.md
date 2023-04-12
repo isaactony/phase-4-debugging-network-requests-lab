@@ -6,7 +6,7 @@
   the server will process the request based on the URL, HTTP verb, and request
   body
 - Debug common problems that occur as part of the request-response cycle
-
+,,
 ## Introduction
 
 Just like the last lesson, we've got code for a React frontend and Rails API
